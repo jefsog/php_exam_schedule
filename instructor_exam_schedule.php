@@ -83,8 +83,13 @@
 session_start();
 if(isset($_SESSION["user_id"])) 
 	$user_id=$_SESSION["user_id"];
-else
+else{
 	echo "Invalid User!";
+	
+	header('Location: index.html');	
+	return;
+}
+	
 
 
 $db_hostname='localhost';
