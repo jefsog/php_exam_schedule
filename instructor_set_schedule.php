@@ -80,10 +80,7 @@
 		echo "Invalid User!";
 
 
-	$db_hostname='localhost';
-	$db_username='root';
-	$db_password='mysql';
-	$db_database='test';
+	require_once "db_connect.php";
 	$connection=new mysqli($db_hostname,$db_username,$db_password,$db_database);
 	if($connection->connect_error){die(connect_error);}
 	?>

@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if($_SESSION['user_name']!="admin"){
-header('Location: logout.php');	
+//header('Location: logout.php');	
 }
 ?>
 

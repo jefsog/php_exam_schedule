@@ -92,10 +92,7 @@ else{
 	
 
 
-$db_hostname='localhost';
-$db_username='root';
-$db_password='mysql';
-$db_database='test';
+require_once 'db_connect.php';
 $connection=new mysqli($db_hostname,$db_username,$db_password,$db_database);
 if($connection->connect_error){die(connect_error);}
 
@@ -136,14 +133,14 @@ echo "<tr>
 			</tr>
 <?php
 
-
+/*
 $db_hostname='localhost';
 $db_username='root';
 $db_password='mysql';
 $db_database='test';
 $connection=new mysqli($db_hostname,$db_username,$db_password,$db_database);
 if($connection->connect_error){die(connect_error);}
-
+*/
 $query="select exam.c_sec_id, course.c_name, user_pwd.name, 
 exam_date.exam_date, exam.time_slot, exam.room_id from exam
 join exam_date on exam.exam_date=exam_date.date_id

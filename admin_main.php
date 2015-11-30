@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if($_SESSION['user_name']!="admin"){
-	header('location: logout.php');
+	//header('location: logout.php');
 }
 ?>
 
@@ -35,7 +35,11 @@ $result=$connection->query($query);
 			$row=$result->fetch_assoc();
 			echo '<form action="admin_main.php" method="get">';
 			echo "<tr>";
-			echo '<td><input type="submit" name="psw_rst" value="Reset Psw"/></td>';
+			echo '<td>
+			
+			<input type="submit" name="psw_rst" value="Reset Psw"/>
+			
+			</td>';
 			foreach ($row as $key => $value) {
 				# code...
 				echo "<td>".$value."</td>";
@@ -43,12 +47,20 @@ $result=$connection->query($query);
 			echo 
 			'
 			<td>
+			
 			<input type="hidden" name="user_id" value="'.$row['user_id'].'"/>
 			<input type="submit" name="delete" value="Delete"/>
-			</td>
-			</form>';
+			</td>';
 			echo "</tr>";
+if(isset($_GET['psw_rst'])){
+$psw_rand=rand(100,999);
+$query="UPDATE `user_pwd` SET `password` = '".$psw_rand."' WHERE `user_pwd`.`user_id` = ".$_GET['user_id'];
+$connection->query($query);
+header('Location:admin_main.php'); //no matter that I put in the form or outside the form, the database date has been updated, but the webpage is not updated, I have to reload the webpage again.
+}
+			echo "</form>";
 		}
+
 
 		?>
 		<!--
@@ -68,12 +80,9 @@ if(isset($_GET['delete'])){
 $query="delete from user_pwd where user_id=".$_GET['user_id'];
 //echo $query;
 $connection->query($query);
+header('Location:admin_main.php');
 }
-if(isset($_GET['psw_rst'])){
-$psw_rand=rand(100,999);
-$query="UPDATE `user_pwd` SET `password` = '".$psw_rand."' WHERE `user_pwd`.`user_id` = ".$_GET['user_id'];
-$connection->query($query);
-}
+
 
 
 ?>
