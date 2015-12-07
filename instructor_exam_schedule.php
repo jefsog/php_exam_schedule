@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>User Schedule</TITLE>
+<TITLE>My Schedule</TITLE>
 <META content="Cutepage 2.0" name=GENERATOR></HEAD>
 <META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
 <STYLE type=text/css>
@@ -87,7 +87,7 @@ table, th, td{
 		</TR>
         <TR bgColor=#35a8a5>
           <TD>
-            <DIV align=center><b><a href="instructor_set_schedule.php"><font color="#ffffff" size="2">Set Schedule</font></a></b></DIV>
+            <DIV align=center><b><a href="instructor_set_schedule.php"><font color="#ffffff" size="2">Set Course Schedule</font></a></b></DIV>
 		  </TD>
 		</TR>
         <TR bgColor=#37a67c>

@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Admin View Schedule</TITLE>
+<TITLE>Admin View Schedules</TITLE>
 <META content="Cutepage 2.0" name=GENERATOR></HEAD>
 <META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
 <STYLE type=text/css>
