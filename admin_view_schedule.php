@@ -22,6 +22,11 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 	padding: 10px;
     text-align: left;
 }
+
+.tableHeaders {
+		background-color: #29a8cd;
+		color: white;
+}
 -->
 
 </STYLE>
@@ -96,9 +101,9 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 	<table border="1">
 		<form>
 		<tr>
-			<th><input type="submit" name="view" value="Filter Results"/></th>
-			<th>Course Section_ID</th>
-			<th>
+			<th class="tableHeaders"><input type="submit" name="view" value="Filter Results"/></th>
+			<th class="tableHeaders">Course Section_ID</th>
+			<th class="tableHeaders">
 				<label>Course Name
 					<select name="choose_course" size="1">
 						<option value=""></option>
@@ -118,7 +123,7 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 					</select>
 				</lable>
 			</th>
-			<th>
+			<th class="tableHeaders">
 				<label>Faculty Name
 					<select name="choose_faculty" size="1">
 						<option value=""></option>
@@ -138,7 +143,7 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 					</select>
 				</label>
 			</th>
-			<th>
+			<th class="tableHeaders">
 				<label>Date
 					<select name="choose_date" size="1">
 						<option value=""></option>
@@ -157,8 +162,8 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 					</select>	
 				</label>
 			</th>
-			<th>Time Period</th>
-			<th>
+			<th class="tableHeaders">Time Period</th>
+			<th class="tableHeaders">
 				<label>Class Room
 					<select name="choose_room" size="1">
 						<option value=""></option>

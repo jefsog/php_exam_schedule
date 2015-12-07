@@ -21,6 +21,11 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 	padding: 10px;
     text-align: left;
 }
+
+.tableHeaders {
+		background-color: #29a8cd;
+		color: white;
+}
 -->
 
 </STYLE>
@@ -78,12 +83,12 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 		<h2>User Management</h2>
 			<table border="1">
 				<tr>
-					<td><b>RESET PASSWORD</b></td>
-					<td><b>USER ID</b></td>
-					<td><b>USER NAME</b></td>
-					<td><b>PASSWORD</b></td>
-					<td><b>USER TYPE</b></td>
-					<td><b>DELETE USER</b></td>
+					<th class="tableHeaders">Reset Password</th>
+					<th class="tableHeaders">User ID</th>
+					<th class="tableHeaders">User Name</th>
+					<th class="tableHeaders">Password</th>
+					<th class="tableHeaders">User Type</th>
+					<th class="tableHeaders">Delete User</th>
 				</tr>
 				<tr>
 				<?php
