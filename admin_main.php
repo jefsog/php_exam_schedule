@@ -78,6 +78,14 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 		<h2>User Management</h2>
 			<table border="1">
 				<tr>
+					<td><b>RESET PASSWORD</b></td>
+					<td><b>USER ID</b></td>
+					<td><b>USER NAME</b></td>
+					<td><b>PASSWORD</b></td>
+					<td><b>USER TYPE</b></td>
+					<td><b>DELETE USER</b></td>
+				</tr>
+				<tr>
 				<?php
 				$num_of_rows=$result->num_rows;
 				for($i=0; $i<$num_of_rows; $i++){
