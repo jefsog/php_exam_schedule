@@ -191,6 +191,7 @@ table, th, td{
 				<td>".$row['room_id']."</td>
 				</tr>";
 		}?>
+		<?php mysqli_close($connection); ?>
 		</table>		
 	</div>
 </div>

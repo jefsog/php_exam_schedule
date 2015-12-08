@@ -132,7 +132,7 @@ table, th, td{
 			<select name='choose_course' size='1'>
 				<?php //populate course needed to be schedule
 
-				if(true || isset($_GET['confirm_schedule'])){
+				if(true || isset($_GET['confirm_schedule'])){ //I think no need for "isset"
 					$query="SELECT * FROM `course_sec` cs 
 					JOIN user_pwd on cs.user_id=user_pwd.user_id 
 					join course c on cs.c_id=c.c_id
@@ -268,7 +268,8 @@ table, th, td{
 							    '$exam_date_id',
 							    '$time_slot')";
 					$result=$connection->query($query);
-					print_r($result);
+					//print_r($result);
+					mysqli_close($connection);
 					if($result)
 						header('Location:instructor_exam_schedule.php');
 				}else{
@@ -276,6 +277,7 @@ table, th, td{
 				}				
 			}
 			?>
+			<?php mysqli_close($connection); ?>
 			</fieldset>
 		</from>
 	</div>

@@ -14,7 +14,7 @@ if($connection->connect_error){
 //echo "Connect sucessfully!";
 $query="select * from user_pwd where name='$username' and password='$password'";
 $result=$connection->query($query);
-
+mysqli_close($connection);
 //print($result->num_rows);
 $row_fetched=$result->num_rows;
 //print_r($result->fetch_assoc()['usr_grp']);
@@ -48,9 +48,5 @@ else
 	echo "Invalid User!"."<br/>";
 	echo "<a href='index.html'>Return</a>";
 }
-
-mysqli_close($connection);	
-
-
 
 ?>

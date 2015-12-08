@@ -103,6 +103,7 @@ td {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 9pt
 				$query="update user_pwd set password='$password2' where user_id='$user_id'";
 				$result=$connection->query($query);			
 				$connection->commit();
+        mysqli_close($connection);
 			if($result){
 				session_destroy();
 				header('Location: index.html');				

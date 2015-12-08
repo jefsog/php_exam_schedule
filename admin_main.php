@@ -71,7 +71,7 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 		<?php 
 			session_start();
 			if($_SESSION['user_name']!="admin"){
-			//header('location: logout.php');
+			header('location: logout.php');
 		}
 		require_once 'db_connect.php';
 		$connection=new mysqli($db_hostname,$db_username,$db_password,$db_database);
@@ -138,6 +138,7 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 		header('Location:admin_main.php');
 		}
 		?>
+		<?php mysqli_close($connection); ?>
   </p>
       </td>
   </tr>

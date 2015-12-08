@@ -72,7 +72,7 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 		<?php 
 		session_start();
 		if($_SESSION['user_name']!="admin"){
-		//header('Location: logout.php');	
+			header('Location: logout.php');	
 		}
 		require_once 'db_connect.php';
 		$connection=new mysqli($db_hostname,$db_username,$db_password,$db_database);
@@ -95,7 +95,14 @@ td, th {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
 		$query="select distinct(exam.room_id) from exam";
 		$result_room=$connection->query($query);
 		?>
+		<?php
+if(isset($_GET['delete'])){ //has to be put above form for in time updating
+	$query="delete from exam where c_sec_id='".$_GET['c_sec_id']."'";
+	$result_delete=$connection->query($query);
+	//header('location:admin_view_schedule.php'); //doesn't work in wamp
+}
 
+?>
 
 <h2>View Schedule</h2>
 	<table border="1">
@@ -260,15 +267,8 @@ for($i=0;$i<$num_of_rows;$i++){
 	echo "</tr>";
 }
 ?>
-<?php
-if(isset($_GET['delete'])){
-	$query="delete from exam where c_sec_id='".$_GET['c_sec_id']."'";
-	$result_delete=$connection->query($query);
-	header("location:admin_view_schedule.php");
-}
 
-?>
-
+<?php mysqli_close($connection); ?>
 </table>	
 </p>
       </td>
